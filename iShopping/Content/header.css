@@ -1,0 +1,672 @@
+﻿/************************************/
+/*									*/
+/*		top navigation style		*/
+/*									*/
+/************************************/
+.navbar .nav #top-navigation-bar .active > a, .navbar .nav #top-navigation-bar .active > a:hover {
+	background:#444 !important;
+}
+
+#top-navigation-bar .navbar-inner {
+	background:#222 !important;
+	-webkit-border-radius:0px !important;
+	-moz-border-radius:0px !important;
+	border-radius:0px !important;
+	border:none;
+	padding-left :0px !important;
+	padding-right:0px !important;
+	padding-top:10px;
+	padding-bottom:5px;
+	font-size:12px;
+	min-width:960px !important;
+}
+
+#top-navigation-bar {
+	margin-bottom:0px;
+}
+
+#top-navigation-bar .nav > li > a {
+	padding: 10px 10px !important;
+	letter-spacing: 0 !important;
+}
+
+.nav li a i{
+	margin-top:-1px;	
+}
+
+.nav li a.dropdown-toggle{
+	font-size:12px;
+}
+
+.container {
+	width:940px !important;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.navigation-bar-content {
+	width:600px; 
+	padding:20px; 
+	background-color:white; 
+	border:1px solid #ccc;
+	border-top:none; 
+	float:left;  
+	position:absolute; 
+	display:none; 
+	z-index:1; 
+	margin-top:2px;
+	margin-left:-240px;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/************************************************************/
+/*															*/
+/*		 CARS FOR SALE TOP NAVIGATION POP OUT BOX STYLE		*/
+/*															*/
+/************************************************************/
+.navigation-bar-sale-content {
+	width:800px; /*735px original*/
+	padding-right:20px;
+	padding-bottom:0px;
+	position:absolute;
+	margin-left:-100px;
+	z-index:999; 
+	display:none;
+}
+
+.inner-holder {
+	border:1px solid #ccc;
+	border-top:none; 
+	float:left;  
+	width:900px; 
+	background-color:white; 
+	z-index:999; 
+	padding:20px; 
+	padding-bottom:0px;
+	margin-left:100px;
+	margin-top:0px;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.navigation-bar-sale-content .span4.car-condition p.title{
+	float:left;
+	margin-top:0px;
+	padding-left:0px;
+	margin-left:0px;
+	margin-bottom:10px;
+	width:100%;
+}
+
+.navigation-bar-sale-content .span4.car-condition .related-expand-line {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.navigation-bar-sale-content .span4 img{
+	float:left;
+	width:80px !important;
+}
+
+.navigation-bar-sale-content .span4 p {
+	float:left;
+	width:205px;
+	font-size:16px;
+	font-weight:300;
+	margin-left:15px;
+	margin-top:-2px;
+	margin-bottom:2px;
+}
+
+.navigation-bar-sale-content .span4 small{
+	float:left;
+	width:205px;
+	color:#666;
+	margin-left:15px;
+	font-size:11px;
+	line-height:17px;
+}
+
+.navigation-bar-sale-content .span4 small .big {
+	font-size:24px;
+	line-height:12px;
+	vertical-align:top;
+	display:inline-block;
+	width:10%;
+}
+
+.navigation-bar-sale-content .span4 small .small {
+	display:inline-block;
+	width:100%;
+}
+
+.navigation-bar-sale-content .span4 a:hover .cars-type-holder {
+	background:#f2f2f2 !important;
+}
+
+.navigation-bar-sale-content .span4 {
+	border-right:1px solid #f2f2f2;
+	padding-right:20px;
+	padding-bottom:0px;
+	margin-bottom:20px;
+}
+
+.cars-type-holder {
+	width:300px;
+	float:left;
+	padding:10px;
+	padding-right:10px;
+	margin-right:10px;
+	margin-left:-10px;
+}
+
+
+/****************************************************************************/
+/*																			*/
+/*		 CARS FOR SALE TOP NAVIGATION POP OUT BOX - POPULAR MAKE STYLE		*/
+/*																			*/
+/****************************************************************************/
+.popular-make {
+	padding-left:0px;
+	float:left;
+	display:table-cell;
+	width:100%;
+}
+
+.popular-make p.title {
+	font-weight:300 !important;
+	margin-bottom:10px;
+}
+
+.popular-make a {
+	width:100%;
+	font-size:9px;
+	height:45px;
+	vertical-align:middle;
+	text-align:left;
+	display:table-cell;
+}
+
+.popular-make a:hover {
+	opacity:0.7;
+	color:#990000;
+}
+
+.popular-make a:hover img{
+	opacity:0.7;
+}
+
+.popular-make a:hover img.unstable1{
+	opacity:0.7;
+	margin-left:1px;
+}
+
+.popular-make a:hover img.unstable2{
+	opacity:0.7;
+	margin-left:2px;
+}
+
+.popular-make-holder {
+	width:135px;
+	float:left;
+	height:40px;
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:8px;
+	text-align:center;
+}
+
+.popular-make-holder a span {
+	float:left;
+	width:40px;
+	height:30px;
+	text-align:center;
+}
+.popular-make-holder a img{
+	max-width:40px;
+	max-height:30px;
+}
+
+.popular-make-holder a label {
+	float:left;
+	font-size:14px;
+	text-decoration:none;
+	width:79px;
+	height:30px;
+	text-align:left;
+	margin-left:10px;
+	margin-right:5px;
+	line-height:30px;
+	font-weight:300;
+	cursor:pointer;
+}
+
+.popular-make-holder a label.special {
+	line-height:14px;
+	width:83px; 
+	position:absolute; 
+	margin-left:50px;
+}
+
+.popular-make-holder a:hover label {
+	text-decoration:underline;
+}
+
+/************************************************************************/
+/*																		*/
+/*		 CARS FOR SALE TOP NAVIGATION POP OUT BOX - BODY TYPE STYLE		*/
+/*																		*/
+/************************************************************************/
+.body-type-holder {
+	width:175px !important;
+	float:left;
+	height:30px;
+	padding-left:3px;
+	margin-right:4px;
+	margin-left:4px;
+	text-align:center;
+	background: #fff;
+	background-repeat:no-repeat;
+	line-height:12px;
+	margin-bottom:12px;
+}
+
+.body-type-holder img {
+	width:60px !important;
+	float:left;
+}
+
+.body-type-holder label {
+	display:inline-block;
+	vertical-align:middle;
+	width:100px;
+	font-weight:300;
+	margin-left:15px;
+}
+
+.body-type-holder:hover {
+	opacity:0.7;
+}
+
+.body-type2 {
+	float:left;
+	display:table-cell;
+	min-height:130px;
+	width:100%;
+}
+
+.body-type2 p {
+	margin-bottom:0px;
+}
+
+.body-type2 p.title {
+	font-weight:300;
+}
+
+.body-type2 a{
+	width:175px;
+	font-size:14px;
+	height:10px;
+	vertical-align:middle;
+	padding-top:10px;
+	padding-right:0px;
+	padding-left:0px;
+	text-align:left;
+	float:right;
+	font-weight:300;
+}
+
+.body-type2 a:link {
+	opacity:1.0;
+}
+
+.body-type2 a:hover {
+	opacity:0.7;
+}
+
+
+/********************************************************/
+/*														*/
+/*		TOP NAVIGATION POP OUT BOX - TOOLS STYLE		*/
+/*														*/
+/********************************************************/
+#content-calculator p.title {
+	float:left;
+	font-weight:300;
+}
+
+#calculator-review .related-expand-line {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.calculator-type-holder {
+	width:410px;
+	float:left;
+	padding:10px;
+	margin-left:-10px;
+	padding-left:10px;
+}
+
+.calculator-type-holder img {
+	height:65px !important; 
+	width:92px !important; 
+	display:inline-block; 
+	float:left;
+}
+
+.calculator-type-holder p.title{
+	width:283px;
+	float:left;
+	margin-left:15px;
+	font-weight:300;
+	color:#990000;
+	margin-bottom:5px;
+}
+
+.calculator-type-holder span {
+	width:283px;
+	float:left;
+	margin-left:15px;
+	font-size:11px;
+	line-height:17px;
+	color:#666;
+}
+
+.navigation-bar-calculator-content {
+	width:410px; 
+	padding:20px; 
+	background-color:white; 
+	border:1px solid #ccc;
+	border-top:none; 
+	float:left;  
+	position:absolute; 
+	display:none; 
+	z-index:1; 
+	margin-top:0px;
+	margin-left:330px;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.navigation-bar-calculator-content a:hover .calculator-type-holder{
+	background:#f2f2f2;
+}
+
+.calculator-navigation-arrow {
+	width:20px;
+	text-align:left;
+	float:left;
+	position:absolute;
+	margin-top:-30px;
+	margin-left:120px;
+}
+/********************************************************/
+/*														*/
+/*		TOP NAVIGATION POP OUT BOX - LOGIN STYLE		*/
+/*														*/
+/********************************************************/
+.navigation-bar-login-content {
+	width:235px; 
+	padding:20px;
+	padding-right:10px;
+	padding-bottom:0px;
+	background-color:white; 
+	border:1px solid #ccc;
+	border-top:none; 
+	float:left;  
+	position:absolute; 
+	display:none; 
+	z-index:1; 
+	margin-top:2px;
+	margin-left:-90px;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#content-login p.title {
+	font-weight:300;
+	float:left;
+	padding-top:10px;
+}
+
+#content-login label.control-label {
+	font-size:12px;
+	color:#666;
+}
+
+#content-login .btn.btn-link {
+	font-size:12px;
+}
+
+.navigation-arrow {
+	width:100%;
+	text-align:left;
+	float:left;
+	position:absolute;
+	margin-top:-30px;
+	margin-left:240px;
+}
+
+.navigation-arrow2 {
+	width:100%;
+	text-align:left;
+	float:left;
+	position:absolute;
+	margin-top:-30px;
+	margin-left:80px;
+}
+
+.navigation-arrow3 {
+	width:20px;
+	text-align:left;
+	float:left;
+	position:absolute;
+	margin-top:-30px;
+	margin-left:81px;
+}
+
+#sale-review .hover-border {
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	margin-left:-10px; 
+	margin-top:-10px;
+	margin-bottom:-10px;
+	color:#eee;
+}
+
+#sale-review .hover-border2 {
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	margin-left:-10px; 
+	margin-top:-20px;
+	margin-bottom:-10px;
+	color:#eee;
+}
+
+/********************************************/
+/*											*/
+/*		logo and advertisement style		*/
+/*											*/
+/********************************************/
+.logo-advertisement-holder {
+	width:100%; 
+	float:left; 
+	height:90px; 
+	padding-bottom:22px;
+	margin-top:0px;
+	padding-top:20px;
+	border-top:1px solid #333;
+	background-repeat:repeat;
+	min-width:960px !important;
+}
+
+.logo-oto {
+	float:left; 
+	margin-left:0px; 
+	width:120px;
+	padding-top:3px;
+}
+
+.advertisement {
+	float: right; 
+	margin-left:0px; 
+	width: 728px; 
+	height: 90px;
+}
+
+/************************************/
+/*									*/
+/*		search bar custom style		*/
+/*									*/
+/************************************/
+
+.search-bar-top-border {
+	float:left;
+	width:100%;
+	height:1px;
+	background:#e3e3e3;
+}
+
+
+.search-bar-holder {
+	width:100%;
+	float:left;
+	background:#f2f2f2;
+	border-top:1px solid #ddd;
+	/*80CC00*/
+	border-bottom:1px solid #ddd;
+	padding-top:12px;
+	padding-bottom:2px;
+	border-radius:0px;
+	min-width:960px !important;
+}
+
+.search-bar-input input {
+	height:28px !important;
+	padding-top:0px !important;
+	padding-bottom:0px !important;
+	border:1px solid #c2c2c2;
+}
+
+.search-bar-input {
+	height:40px;
+	display:block;
+}
+
+.search-bar-input button {
+	float:right;
+	position:relative;
+	top:-39px;
+	right:-1px;
+}
+
+#custom-search-bar {
+	display:none;
+}
+
+.search-result-title {
+	width:100%;
+	float:left;
+	font-weight:lighter;
+	font-size:18px;
+}
+
+.search-total-displaying-result {
+	width:100%:
+	float:left;
+	font-weight:lighter;
+	font-size:12px;
+	color:#999999;
+}	
+
+.radio {
+	font-size:12px;
+}
+
+.span2 select {
+	height:24px;
+	font-size:10px;
+	line-height:20px;
+}
+
+.span4 select {
+	height:26px;
+	font-size:13px;
+	margin-top:3px !important;
+}
+
+.search-bar-text-align {
+	padding-top:5px;
+}
+
+.fieldset-holder {
+	width:100%;
+	float:left;
+	padding:5px;
+}
+
+.fieldset-holder p {
+}
+
+.divider-line {
+	width:100%;
+	float:left;
+	height:1px;
+	background-color:#f2f2f2;
+}
+
+.seller-checkbox {
+	margin-top:-12px;
+	margin-bottom:-5px;
+}
+
+.seller-checkbox input {
+	margin-top:0px;
+	display:inline-block;
+	margin-left:26px;
+	margin-right:5px;
+}
+
+.seller-checkbox label {
+	display:inline-block;
+	font-weight:normal;
+	font-size:12px;
+}
+
+.search-option-form .span2 {
+	margin-right:5px;
+}
+
+.search-option-form .span4 {
+	width:295px;
+}

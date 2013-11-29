@@ -1,0 +1,98 @@
+﻿/****************************/
+/*							*/
+/*		footer style		*/
+/*							*/
+/****************************/
+.footer-holder {
+	width:100%;
+	float:left;
+	background:#222;
+	padding-top:25px;
+	padding-bottom:13px;
+	min-width:960px !important;
+}
+
+.footer-holder a:link, .footer-holder a:visited {
+	color: #CCC;
+	text-decoration:none;
+}
+
+.footer-holder a:hover {
+	color:#cc0000;
+	text-decoration:underline;
+}
+
+.footer-bottom-holder a:link, .footer-bottom-holder a:visited {
+	color: #EEE;
+	text-decoration: none;
+}
+
+.footer-bottom-holder a:hover {
+	color:#cc0000;
+	text-decoration:underline;
+}
+
+.footer-title {
+	color: #EEE;
+	font-size: 18px;
+	margin-bottom:10px;
+	padding:20px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.footer-highlight-text {
+	color:#999;
+	font-size:12px;
+}
+
+.footer-content {
+	float:left;
+	color:#666;
+	font-size:12px;
+	padding:20px;
+	padding-top:0px;
+	padding-bottom:20px;
+}
+.footer-content .well.well-small {
+	 width:75%; 
+	 border:none; 
+	 background:none; 
+	 padding-left:0px;
+}
+
+.footer-holder i {
+	margin-top:4px;
+	float: left;
+}
+
+.footer-content a > p {
+	margin-left: 15px;
+	margin-bottom: 0;
+}
+
+.footer-bottom-gradient-line {
+	width:100%;
+	float:left;
+	height:1px;
+	background:#444;
+	min-width:960px !important;
+}	
+
+.footer-bottom-holder {
+	padding-top:20px;
+	float:left;
+	width:100%;
+	background:#303030;
+	padding-bottom:20px;
+	min-width:960px !important;
+}
+
+.footer-bottom-content {
+	width:100%;
+	float:left;
+	color: #999;
+	font-size:12px;
+	text-align:center;
+	font-weight:lighter;
+}
