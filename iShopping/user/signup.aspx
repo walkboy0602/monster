@@ -4,7 +4,7 @@
 
     <div class="row">
 
-        <div class="form-horizontal signup-form ">
+        <div class="form-horizontal form">
             <div class="col-md-8">
 
                 <div class="form-group title underline first">
