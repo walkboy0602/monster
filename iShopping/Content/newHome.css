@@ -1,4 +1,8 @@
-﻿.body-content {
+﻿body{
+    background-color: #eee;
+}
+
+.body-content {
     margin-top: 30px;
 }
 
@@ -21,7 +25,7 @@
 --------------------------------- */
 
 .thumbnail.basic {
-    background-color: #fafafa;
+    background-color: #fff;
     height: 300px;
 }
 
@@ -112,11 +116,10 @@
         margin: 0px;
         height: 20px;
         font-size: 10px;
-        bottom: 5px;
         font-weight: bold;
-        position: absolute;
-        right: 25px;
-        top: 164px;
+        position: relative;
+        left: 210px;
+        bottom: 26px;
         -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
         border-radius: 2px;
@@ -145,8 +148,6 @@ a.thumbnail.basic.active {
     border: 1px solid #ccc;
     display: block;
     padding: 0px;
-    width: 296px;
-    float: left;
     line-height: 20px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -167,19 +168,16 @@ a.thumbnail.basic.active {
     }
 
     .thumbnail-feature .image {
-        background: #333 url(../../image/loading_transparent.gif);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 50px;
         position: relative;
-        height: 222px;
-        width: 296px;
         text-align: center;
     }
 
         .thumbnail-feature .image img {
             height: 222px;
-            width: 296px;
+            max-width: 100%;
             background: #333;
         }
 
@@ -211,7 +209,7 @@ a.thumbnail.basic.active {
             border-bottom-color: rgba(0, 0, 0, 1.0);
             position: absolute;
             bottom: -7px;
-            right: 142px;
+            right: 76px;
         }
 
         .thumbnail-feature .info .info-title:before {
@@ -285,7 +283,7 @@ a.thumbnail-feature:hover {
 }
 
 .thumbnail-feature:hover img {
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 a.thumbnail-feature:hover .info-title,

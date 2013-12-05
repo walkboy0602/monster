@@ -3,20 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "iShopping(2)", "http://localhost:52520", "{D5ECCF0D-41D2-4D9F-820A-FC044FD6FED7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{D46D95D5-3CDF-4EDB-9790-57E66C2F855E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "iShopping", "http://localhost:52222", "{D5ECCF0D-41D2-4D9F-820A-FC044FD6FED7}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_52520"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52222"
 		Debug.AspNetCompiler.PhysicalPath = "iShopping\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52520\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52222\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_52520"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52222"
 		Release.AspNetCompiler.PhysicalPath = "iShopping\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52520\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52222\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
@@ -27,10 +29,17 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D46D95D5-3CDF-4EDB-9790-57E66C2F855E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46D95D5-3CDF-4EDB-9790-57E66C2F855E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46D95D5-3CDF-4EDB-9790-57E66C2F855E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46D95D5-3CDF-4EDB-9790-57E66C2F855E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5ECCF0D-41D2-4D9F-820A-FC044FD6FED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5ECCF0D-41D2-4D9F-820A-FC044FD6FED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5ECCF0D-41D2-4D9F-820A-FC044FD6FED7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5ECCF0D-41D2-4D9F-820A-FC044FD6FED7}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

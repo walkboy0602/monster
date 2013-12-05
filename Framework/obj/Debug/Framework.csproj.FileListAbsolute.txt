@@ -1,0 +1,5 @@
+C:\Users\chenhau\Documents\GitHub\myshop\Framework\bin\Debug\Framework.dll
+C:\Users\chenhau\Documents\GitHub\myshop\Framework\bin\Debug\Framework.pdb
+C:\Users\chenhau\Documents\GitHub\myshop\Framework\obj\Debug\Framework.dll
+C:\Users\chenhau\Documents\GitHub\myshop\Framework\obj\Debug\Framework.pdb
+C:\Users\chenhau\Documents\GitHub\myshop\Framework\bin\Debug\Microsoft.ScriptManager.MSAjax.dll
