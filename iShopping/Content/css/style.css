@@ -2361,20 +2361,37 @@ footer {
     margin-bottom: 13px;
 }
 
-.listing{
+.listing {
     margin: 20px 0px;
 }
 
-.listing .wrap-box {
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #f2f2f2;
+    .listing .wrap-box {
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        border-radius: 7px;
+        box-shadow: 0 0 10px 1px rgba(190,189,189,.74);
+    }
+
+
+.listing .category {
+    overflow: hidden;
+    margin: 10px auto;
+    padding: 10px 16px 10px 10px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #cccccc;
     border-radius: 7px;
-    box-shadow: 0 0 10px 1px rgba(190,189,189,.74);
+    max-height: 135px;
+    text-align: center;
 }
 
-.listing .category{
-    margin: 20px;
-    float: left;
-    max-width: 130px;
+.listing .category:hover{
+    background-color: #ebebeb;
+    border-color: #adadad;
 }
+
+

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDB.dbo.Account' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="LastIP" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LoginCounter" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastIP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LoginCounter" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDB.dbo.AccountType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="AccountID" />
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="Type" Type="tinyint" Nullable="false" />
+    <Property Name="ExpireDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDB.dbo.Region' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CountryCode" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Level" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDB.dbo.RegionZone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RegionZone">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegionID" Type="int" Nullable="false" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="longitude" Type="decimal" Precision="9" Scale="6" />
+    <Property Name="latitude" Type="decimal" Precision="9" Scale="6" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="sort" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDB.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="AccountID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Mobile" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ShopModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Account].[ID] AS [ID], 
+    [Account].[UserName] AS [UserName], 
+    [Account].[Password] AS [Password], 
+    [Account].[LastIP] AS [LastIP], 
+    [Account].[CreateDate] AS [CreateDate], 
+    [Account].[LoginCounter] AS [LoginCounter]
+    FROM [dbo].[Account] AS [Account]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AccountType" EntityType="Self.AccountType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AccountType].[AccountID] AS [AccountID], 
+    [AccountType].[Type] AS [Type], 
+    [AccountType].[ExpireDate] AS [ExpireDate]
+    FROM [dbo].[AccountType] AS [AccountType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Region" EntityType="Self.Region" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Region].[ID] AS [ID], 
+    [Region].[CountryCode] AS [CountryCode], 
+    [Region].[Name] AS [Name], 
+    [Region].[Level] AS [Level]
+    FROM [dbo].[Region] AS [Region]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RegionZone" EntityType="Self.RegionZone" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RegionZone].[ID] AS [ID], 
+    [RegionZone].[RegionID] AS [RegionID], 
+    [RegionZone].[ParentID] AS [ParentID], 
+    [RegionZone].[longitude] AS [longitude], 
+    [RegionZone].[latitude] AS [latitude], 
+    [RegionZone].[name] AS [name], 
+    [RegionZone].[sort] AS [sort]
+    FROM [dbo].[RegionZone] AS [RegionZone]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [User].[ID] AS [ID], 
+    [User].[AccountID] AS [AccountID], 
+    [User].[FirstName] AS [FirstName], 
+    [User].[LastName] AS [LastName], 
+    [User].[Email] AS [Email], 
+    [User].[Mobile] AS [Mobile]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
