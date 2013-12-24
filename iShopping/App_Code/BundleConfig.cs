@@ -49,15 +49,19 @@ namespace iShopping
                 "~/Scripts/js/filter.js", //Filter for suport page
                 "~/Scripts/js/respond.min.js", //Respond JS for IE8
                 "~/Scripts/js/html5shiv.js", //HTML5 Support for IE
+                "~/Scripts/js/jquery.validationEngine.js", //Validation Engine
                 "~/Scripts/js/custom.js"
                 ));
 
-            bundles.Add(new ScriptBundle("~/bundles/plugin").Include(
-                "~/Scripts/js/plugin/jquery.easing.js",
-                "~/Scripts/js/plugin/jquery.touchSwipe.js",
-                "~/Scripts/js/plugin/jquery.jslider.js"
-                ));
-
+            //Angular
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                 "~/Scripts/angular/angular.js",
+                 "~/Scripts/angular/angular-sanitize.js",
+                 "~/Scripts/angular/apps.js",
+                 "~/Scripts/angular/api.js",
+                 "~/Scripts/angular/ui-bootstrap-tpls-0.6.0.js",
+                 "~/Scripts/angular/user.js"
+                 ));
 
             ScriptManager.ScriptResourceMapping.AddDefinition(
                 "respond",

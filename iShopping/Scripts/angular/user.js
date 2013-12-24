@@ -1,122 +1,86 @@
 ﻿//Login User
-cabalApp.controller("LoginController", ['$scope', 'dataFactory', '$route',
+shopApp.controller("LoginController", ['$scope', 'dataFactory', '$route',
     function ($scope, dataFactory, $route) {
 
-        var validator = $("#formLogin").validate({
-            debug: true,
-            rules: {
-                username: {
-                    required: true,
-                },
-                password: {
-                    required: true,
-                }
-            }
-        });
+        $scope.form = {
+            email: $('#email').val(),
+            password: $("#password").val()
+        }
 
         $scope.save = function (form) {
 
-            if (validator.valid()) {
-
-                dataFactory.login(form)
-                    .success(function (data){
+            dataFactory.login(form)
+                .success(function (data, status) {
+                    window.location = "/search";
+                })
+                .error(function (data, status) {
+                    if (status === 400) {
                         $scope.alert = {
-                            type: 'success',
-                            msg: 'Logging success!',
+                            type: 'danger',
+                            message: data.Message,
                             display: true
-                        }
-                        window.location = "/home.aspx";
-                    })
-                    .error(function (data, status) {
-                        if (status === 400) {
-                            $scope.alert = {
-                                type: 'warning',
-                                msg: data.Message,
-                                display: true
-                            };
-                        } else {
-                            $scope.alert = {
-                                type: 'danger',
-                                title: 'Oh Crap!',
-                                msg: 'There was an error while processing your request.',
-                                display: true
-                            };
-                        }
-                    });
+                        };
+                    } else {
+                        $scope.alert = {
+                            type: 'danger',
+                            title: 'Oh Crap!',
+                            message: 'There was an error while processing your request.',
+                            display: true
+                        };
+                    }
+                });
 
-                }
-            }
+        }
 
     }]);
 
 //Register Account
-cabalApp.controller("RegisterController", ['$scope', 'dataFactory',
+shopApp.controller("RegisterController", ['$scope', 'dataFactory',
     function ($scope, dataFactory) {
-
-        var validator = $("#formRegister").validate({
-            debug:true,
-            rules: {
-                username: {
-                    required: true,
-                    minlength: 6
-                },
-                email:{
-                    required: true,
-                    email: true
-                },
-                password: {
-                    required: true,
-                    minlength: 6
-                },
-                cPassword: {
-                    required: true,
-                    equalTo: "#password",
-                    minlength: 6
-                }
-            },
-            messages: {
-                cPassword: " Password does not match."
-            }
-        });
-
-
+        var errorMsg = "";
         $scope.save = function (form) {
 
-            if (validator.valid()) {
+            form.Mobile = form.PhonePrefix + form.PhoneNo;
 
-                dataFactory.register(form)
-                    .success(function (data) {
+            dataFactory.register(form)
+                .success(function (data) {
+                    $scope.alert = {
+                        type: 'success',
+                        display: true,
+                        message: 'Thank you, your message have been successfully sent out.'
+                    };
+                })
+                .error(function (data, status) {
+                    if (status === 400) {
                         $scope.alert = {
-                            type: 'success',
-                            msg: 'Welcome to Cabal Neverath World!',
-                            title: 'Success!',
+                            type: 'danger',
+                            display: true,
+                            message: data.Message
+                        };
+
+                    } else {
+                        $scope.alert = {
+                            type: 'danger',
+                            message: 'There was an error while processing your request.',
                             display: true
-                        }
-                    })
-                    .error(function (data, status) {
-                        if (status === 400) {
-                            $scope.alert = {
-                                type: 'warning',
-                                title: 'Opps - ',
-                                msg: data.Message,
-                                display: true
-                            };
-                        } else {
-                            $scope.alert = {
-                                type: 'danger',
-                                title: 'Oh Crap!',
-                                msg: 'There was an error while processing your request.',
-                                display: true
-                            };
-                        }
-                    });
-            
-            }
+                        };
+                    }
+                });
+
         }
 
 
     }]);
 
+//User
+shopApp.controller("UserController", ['$scope', 'dataFactory', '$route',
+    function ($scope, dataFactory, $route) {
 
+        $scope.logout = function () {
+            dataFactory.logout()
+                .success(function (data) {
+                    window.location = "/user/login";
+                });
+        }
 
-
+    }]);

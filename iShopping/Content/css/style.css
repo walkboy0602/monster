@@ -4,13 +4,20 @@ Designed by : http://responsivewebinc.com
 
 /* Basic CSS starts */
 
-body {
+/*body {
     font-family: 'Open Sans', sans-serif;
     color: #444;
     font-size: 13px;
     line-height: 25px;
     -webkit-font-smoothing: antialiased;
-    background: #fafafa url('../img/main-back.png') repeat;
+    background: #fafafa;
+}*/
+
+body {
+    background: #e5e5e5;
+    font: normal 13px Roboto,arial,sans-serif;
+    line-height: 25px;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
@@ -46,6 +53,10 @@ a {
     }
 
 hr {
+}
+
+span[class*="fa"] {
+    margin-right: 5px;
 }
 
 strong {
@@ -91,7 +102,7 @@ strong {
 .sep {
     height: 5px;
     margin: 20px 0px;
-    background: url("../img/sep.png") repeat;
+    background: url("../../img/sep.png") repeat;
 }
 
 .blocky {
@@ -211,6 +222,8 @@ strong {
     border: 1px solid #bbb;
     box-shadow: 0px 0px 1px #999;
     border-radius: 3px;
+    margin: 3px;
+    padding: 15px;
 }
 
 .cool-block-bor {
@@ -467,6 +480,23 @@ strong {
     font-size: 16px;
 }
 
+.nav-user {
+    margin-top: 20px;
+}
+
+    .nav-user a {
+        font-size: 13px;
+        color: #fff;
+        font-weight: bold;
+        margin: 0px 1px;
+        display: inline-block;
+        padding: 2px 7px;
+    }
+
+        .nav-user a:hover {
+            text-decoration: none;
+        }
+
 /* Hero */
 
 .hero {
@@ -660,7 +690,7 @@ strong {
         padding: 25px 0px;
         color: #fff;
         margin: 3px 0px;
-        background: #333 url('../img/bit-tile-blue.gif') repeat center center;
+        background: #333 url('../../img/bit-tile-blue.gif') repeat center center;
         border-top: 1px solid #999;
         border-bottom: 1px solid #999;
     }
@@ -1116,7 +1146,8 @@ strong {
         margin: 0px;
         font-weight: bold;
         padding-bottom: 7px;
-        border-bottom: 1px dashed #eee;
+        /*border-bottom: 1px dashed #eee;*/
+        max-width: 700px;
     }
 
     .shop-items .item {
@@ -1135,6 +1166,14 @@ strong {
 
     .shop-items hr {
         margin: 5px 0px;
+    }
+
+    .shop-items .wrap-box {
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        border-radius: 7px;
+        box-shadow: 0 0 10px 1px rgba(190,189,189,.74);
     }
 
     .shop-items .item-icon {
@@ -1301,6 +1340,19 @@ strong {
 .item .website {
     right: -50%;
 }
+
+/* Seller */
+.seller {
+    margin-top: 63px;
+    left: 28%;
+}
+
+
+    .seller .panel-heading {
+        color: #fff !important;
+        background-color: #16cbe6 !important;
+        border-color: #16cbe6 !important;
+    }
 
 /* Main */
 
@@ -1945,7 +1997,7 @@ strong {
 /* Footer */
 
 footer {
-    background: #333 url("../img/footer-back.png") repeat;
+    background: #333 url("../../img/footer-back.png") repeat;
     border-top: 3px solid #ddd;
     box-shadow: inset 0px 0px 3px #111;
     color: #ccc;
@@ -2187,16 +2239,16 @@ footer {
     }
 }
 
-
+/* Item Carousel */
 .carousel-item .carousel-box img {
     width: auto !important;
     height: auto !important;
-    margin-top: 20px !important;
-    max-height: 250px;
+    margin-top: 10px !important;
+    min-height: 300px;
+    max-height: 300px;
     margin: 0 auto;
 }
 
-/* styling for the thumbnail carousel */
 .carousel-item #thumbs {
     width: 330px;
     height: 70px;
@@ -2226,10 +2278,8 @@ footer {
             position: absolute;
             top: 0;
             left: 0;
-            background: transparent url('images/carousel_glare_small.png') no-repeat 0 0;
             width: 70px;
             height: 60px;
-            border: 2px solid #ddd;
             text-indent: -999em;
             border-radius: 5px;
             -webkit-border-radius: 5px;
@@ -2237,19 +2287,17 @@ footer {
         }
 
             .carousel-item #thumbs .thumb a.selected, .carousel-item #thumbs .thumb a:hover {
-                border: 2px solid #aaa;
+                border: 2px solid #16cbe6;
             }
 
-/* styling for previous and next button */
 .carousel-item #prev, .carousel-item #next {
     position: absolute;
     display: block;
     width: 19px;
     height: 20px;
-    background: transparent url('images/carousel_nav.png') no-repeat 0 0;
     bottom: 30px;
 }
-/* Set the position according to the sprite */
+
 .carousel-item #prev {
     background-position: 0 0;
     left: 25px;
@@ -2270,4 +2318,63 @@ footer {
 
 .carousel-item #prev.disabled, .carousel-item #next.disabled {
     display: none !important;
+}
+
+/* Register */
+.title {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+    width: 100%;
+    display: block;
+}
+
+    .title.underline {
+        height: 1px;
+        background-position: bottom;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background: -moz-linear-gradient(left, #FFFFFF 0%,#cccccc 50%,#FFFFFF 100%);
+        background: -webkit-linear-gradient(left, #FFFFFF 0%,#cccccc 50%,#FFFFFF 100%);
+        background: linear-gradient(left, #FFFFFF 0%,#000000 50%,#FFFFFF 100%);
+        margin-top: 40px;
+        border-bottom: 0px;
+    }
+
+        .title.underline.first {
+            margin-top: 20px;
+        }
+
+    .title > label {
+        margin-top: -25px;
+        float: left;
+    }
+
+.underline {
+    height: 1px;
+    background: -moz-linear-gradient(left, #FFFFFF 0%,#cccccc 50%,#FFFFFF 100%);
+    background: -webkit-linear-gradient(left, #FFFFFF 0%,#cccccc 50%,#FFFFFF 100%);
+    background: linear-gradient(left, #FFFFFF 0%,#000000 50%,#FFFFFF 100%);
+    width: 100%;
+    float: left;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+.listing{
+    margin: 20px 0px;
+}
+
+.listing .wrap-box {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 7px;
+    box-shadow: 0 0 10px 1px rgba(190,189,189,.74);
+}
+
+.listing .category{
+    margin: 20px;
+    float: left;
+    max-width: 130px;
 }

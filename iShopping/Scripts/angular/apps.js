@@ -1,8 +1,24 @@
 ﻿
 //declare a module
-var cabalApp = angular.module("cabalApp", ['cabalAPI', 'ui.bootstrap']);
+var shopApp = angular.module("shopApp", ['shopAPI', 'ui.bootstrap', 'ngSanitize'])
+                    .config(function ($locationProvider, $routeProvider) {
 
-cabalApp.run(['$rootScope', '$window', '$http', function ($rootScope, $window, $http) {
+                        //Remove Anchor (#) tag on URL
+                        $locationProvider.html5Mode(true).hashPrefix('!');
+
+                        //$routeProvider.when('/', {
+                        //    templateUrl: 'partials/home.html',
+                        //    controller: HomeCtrl
+                        //});
+
+                        //$routeProvider.when('/tags/:tagId', {
+                        //    templateUrl: 'partials/result.html',
+                        //    controller: TagResultCtrl
+                        //});
+                        //$routeProvider.otherwise({redirectTo: '/home', controller: HomeCtrl});
+                    });
+
+shopApp.run(['$rootScope', '$window', '$http', function ($rootScope, $window, $http) {
     //add this so server side will recognise as ajax request
     $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

@@ -181,24 +181,20 @@ $(document).ready(function () {
     $('.sidey .nav').navgoco();
     $('[data-toggle="tooltip"]').tooltip();
 
-    //buttons for next and previous item						 
-    var buttons = {
-        previous: $('#jslidernews1 .button-previous'),
-        next: $('#jslidernews1 .button-next')
-    };
-    $('#jslidernews1').lofJSidernews({
-        interval: 4000,
-        direction: 'opacitys',
-        easing: 'easeInOutExpo',
-        duration: 1200,
-        auto: true,
-        maxItemDisplay: 4,
-        mobile: true,
-        navPosition: 'horizontal', // horizontal
-        navigatorHeight: 60,
-        navigatorWidth: 80,
-        mainWidth: 360,
-        buttons: buttons
-    });
+    /* Floating Bar */
+    //$sidebar = $(".seller");
+    //$window = $(window);
+    //var sidebarOffset = $sidebar.offset();
 
+    //$window.scroll(function () {
+    //    if ($window.scrollTop() > sidebarOffset.top) {
+    //        $sidebar.stop().animate({
+    //            marginTop: $window.scrollTop() - sidebarOffset.top
+    //        });
+    //    } else {
+    //        $sidebar.stop().animate({
+    //            marginTop: 0
+    //        });
+    //    }
+    //});
 });

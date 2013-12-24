@@ -1,7 +1,7 @@
 ﻿//Tutorial of how to use Angular integrate with Web Form
 //http://weblogs.asp.net/dwahlin/archive/2013/08/16/using-an-angularjs-factory-to-interact-with-a-restful-service.aspx
 
-angular.module('cabalAPI', [])
+angular.module('shopAPI', [])
     .factory('dataFactory', ['$http', function ($http) {
 
         return {
@@ -10,7 +10,11 @@ angular.module('cabalAPI', [])
             },
             login: function (data) {
                 return $http.post('/api/user/login', data);
+            },
+            logout: function (data) {
+                return $http.post('/api/user/logout', data);
             }
+        
         }
 
         //dataFactory.getCustomers = function () {

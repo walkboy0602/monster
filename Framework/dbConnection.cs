@@ -169,9 +169,9 @@ namespace Framework
                     {
                         cmd.CommandTimeout = connTimeout;
                         if (sqlParameter != null) cmd.Parameters.AddRange(sqlParameter);
-                        cmd.ExecuteNonQuery();
-                        cmd.CommandText = "SELECT LAST_INSERT_ID()";
-                        cmd.Parameters.Clear();
+                        //cmd.ExecuteNonQuery();
+                        //cmd.CommandText = "SELECT SCOPE_IDENTITY()";
+                        //cmd.Parameters.Clear();
                         id = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                 }
