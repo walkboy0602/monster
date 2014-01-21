@@ -77,7 +77,7 @@
 
                 </div>
                 <div class="col-md-4 col-sm-5" data-ng-controller="UserController">
-                    <% if (!Context.User.Identity.IsAuthenticated)
+                    <% if (!BaseController.AuthCheck())
                        { %>
                     <div class="kart-links">
                         <a runat="server" href="~/user/login">Login</a>
@@ -88,7 +88,7 @@
                        else
                        { %>
                     <div class="kart-links pull-right">
-                        <a runat="server" href="~/user/home"><span class="fa fa-user"></span> <%= Context.User.Identity.Name %></a>
+                        <a runat="server" href="~/user/home"><span class="fa fa-user"></span> <%= Session["Lastname"] %></a>
                         <a href="javascript:void(0);" data-ng-click="logout();"><span class="fa fa-power-off"></span>Logout</a>
                     </div>
                     <% } %>
@@ -160,7 +160,14 @@
     </div>
     <!-- /.modal -->
 
-
+    
+    <script>
+        window.data = {
+            country: '@ViewBag.UserBasedCountry',
+            subID: '@ViewBag.subID',
+            acl: '@ViewBag.AccessLevel'
+        };
+    </script>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/script") %>
         <%: Scripts.Render("~/bundles/angular") %>

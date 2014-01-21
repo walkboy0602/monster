@@ -1,6 +1,6 @@
 ﻿//Login User
-shopApp.controller("LoginController", ['$scope', 'dataFactory', '$route',
-    function ($scope, dataFactory, $route) {
+shopApp.controller("LoginController", ['$scope', 'userFactory', '$route',
+    function ($scope, userFactory, $route) {
 
         $scope.form = {
             email: $('#email').val(),
@@ -9,7 +9,7 @@ shopApp.controller("LoginController", ['$scope', 'dataFactory', '$route',
 
         $scope.save = function (form) {
 
-            dataFactory.login(form)
+            userFactory.login(form)
                 .success(function (data, status) {
                     window.location = "/search";
                 })
@@ -35,14 +35,14 @@ shopApp.controller("LoginController", ['$scope', 'dataFactory', '$route',
     }]);
 
 //Register Account
-shopApp.controller("RegisterController", ['$scope', 'dataFactory',
-    function ($scope, dataFactory) {
+shopApp.controller("RegisterController", ['$scope', 'userFactory',
+    function ($scope, userFactory) {
         var errorMsg = "";
         $scope.save = function (form) {
 
             form.Mobile = form.PhonePrefix + form.PhoneNo;
 
-            dataFactory.register(form)
+            userFactory.register(form)
                 .success(function (data) {
                     $scope.alert = {
                         type: 'success',
@@ -73,11 +73,11 @@ shopApp.controller("RegisterController", ['$scope', 'dataFactory',
     }]);
 
 //User
-shopApp.controller("UserController", ['$scope', 'dataFactory', '$route',
-    function ($scope, dataFactory, $route) {
+shopApp.controller("UserController", ['$scope', 'userFactory', '$route',
+    function ($scope, userFactory, $route) {
 
         $scope.logout = function () {
-            dataFactory.logout()
+            userFactory.logout()
                 .success(function (data) {
                     window.location = "/user/login";
                 });

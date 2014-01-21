@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ItemMasterPage.master" AutoEventWireup="true" CodeFile="search.aspx.cs" Inherits="search" %>
+
 <%@ Register TagPrefix="leftBar" TagName="LeftBar" Src="~/Controls/LeftBar.ascx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
@@ -19,7 +20,7 @@
 
             <div class="row">
 
-                <div class="col-md-9 col-md-push-3">
+                <div class="col-md-12">
 
                     <!-- Breadcrumb -->
                     <ul class="breadcrumb">
@@ -31,20 +32,20 @@
                     <!-- Items List starts -->
 
                     <div class="row">
-                        <!-- Item #1 -->
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <!-- Use the below link to put HOT icon -->
                                 <div class="item-icon"><span>HOT</span></div>
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="http://static.my.groupon-content.net/01/43/1385113874301.jpg" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">HTC One V</a></h5>
+                                    <h5><a href="/detail.aspx">HTC One V</a></h5>
                                     <div class="clearfix"></div>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
@@ -63,20 +64,20 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
+
                         </div>
 
-                        <!-- Item #2 -->
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/3.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Dell One V</a></h5>
+                                    <h5><a href="/detail.aspx">Dell One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -96,17 +97,17 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/4.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Cannon One V</a></h5>
+                                    <h5><a href="/detail.aspx">Cannon One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -119,21 +120,18 @@
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
 
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/5.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Samsung One V</a></h5>
+                                    <h5><a href="/detail.aspx">Samsung One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -146,18 +144,18 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <div class="item-icon"><span>HOT</span></div>
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/6.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Micromax One V</a></h5>
+                                    <h5><a href="/detail.aspx">Micromax One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -170,17 +168,17 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/7.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Nokia One V</a></h5>
+                                    <h5><a href="/detail.aspx">Nokia One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -193,21 +191,19 @@
                             </div>
                         </div>
 
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
 
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/8.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Samsung One V</a></h5>
+                                    <h5><a href="/detail.aspx">Samsung One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -220,18 +216,18 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <div class="item-icon"><span>HOT</span></div>
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/9.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Micromax One V</a></h5>
+                                    <h5><a href="/detail.aspx">Micromax One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -244,17 +240,17 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="item">
                                 <!-- Item image -->
                                 <div class="item-image">
-                                    <a href="single-item.html">
+                                    <a href="/detail.aspx">
                                         <img src="img/items/10.png" alt="" class="img-responsive" /></a>
                                 </div>
                                 <!-- Item details -->
                                 <div class="item-details">
                                     <!-- Name -->
-                                    <h5><a href="single-item.html">Nokia One V</a></h5>
+                                    <h5><a href="/detail.aspx">Nokia One V</a></h5>
                                     <!-- Para. Note more than 2 lines. -->
                                     <p>Something about the product goes here. Not More than 2 lines.</p>
                                     <hr />
@@ -268,13 +264,12 @@
                         </div>
 
                     </div>
-
                     <!-- Items List ends -->
 
-
+                     <!-- Pagination -->
                     <div class="row">
                         <div class="col-md-12">
-                            <!-- Pagination -->
+                           
                             <ul class="pagination">
                                 <li><a href="#">&laquo;</a></li>
                                 <li><a href="#">1</a></li>
@@ -289,9 +284,6 @@
 
                 </div>
 
-                <div class="col-md-3 col-md-pull-9">
-                    <leftBar:LeftBar ID="LeftBar" runat="server" />
-                </div>
             </div>
 
             <div class="sep-bor"></div>

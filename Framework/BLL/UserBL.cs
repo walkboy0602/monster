@@ -25,7 +25,6 @@ namespace Framework.BLL
         public User AutoLogin(int id)
         {
             return _UserDL.AutoLogin(id);
-            
         }
 
         public User Login(LoginCredential cred)

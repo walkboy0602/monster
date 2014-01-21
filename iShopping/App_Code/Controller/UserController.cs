@@ -56,20 +56,27 @@ public class UserController : ApiController
          {
              var session = HttpContext.Current.Session;
 
-             session["AccountID"] = u.AccountID;
+             session["UserID"] = u.UserID;
              session["LastName"] = u.LastName;
              session["FirstName"] = u.FirstName;
              session["Email"] = u.Email;
              session["LoggedIn"] = true;
 
-             FormsAuthentication.SetAuthCookie(u.FirstName, cred.RememberMe);
+             FormsAuthentication.SetAuthCookie(u.UserID.ToString(), cred.RememberMe);
 
              //FormsAuthentication.SetAuthCookie(cred.Email, false);
 
-             //FormsAuthenticationTicket objTicket = new FormsAuthenticationTicket(1, u.AccountID.ToString(), DateTime.Now, DateTime.Now.AddMinutes(240), false, u.AccountID.ToString(), FormsAuthentication.FormsCookiePath);
+             FormsAuthenticationTicket objTicket = 
+                 new FormsAuthenticationTicket(1, 
+                     u.AccountID.ToString(), 
+                     DateTime.Now, 
+                     DateTime.Now.AddMinutes(240), 
+                     false, 
+                     u.AccountID.ToString(),
+                     FormsAuthentication.FormsCookiePath);
 
-             //// Encrypt the ticket.
-             //string encTicket = FormsAuthentication.Encrypt(objTicket);
+             // Encrypt the ticket.
+             string encTicket = FormsAuthentication.Encrypt(objTicket);
 
              //HttpCookie objCookie = null;
              //objCookie = new HttpCookie(".ASPXAUTH");

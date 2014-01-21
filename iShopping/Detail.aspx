@@ -3,10 +3,7 @@
 <%@ Register TagPrefix="leftBar" TagName="LeftBar" Src="~/Controls/LeftBar.ascx" %>
 
 <asp:Content ID="RightContent" ContentPlaceHolderID="RightBarContent" runat="server">
-    <!-- Seller Info -->
-    <div class="seller col-md-3 col-md-push-3 ">
-    </div>
-    <!-- /.Seller Info -->
+
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
@@ -16,6 +13,7 @@
             <div class="row">
 
                 <div class="col-md-12">
+
                     <!-- Breadcrumb -->
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home</a> <span class="divider"></span></li>
@@ -23,17 +21,9 @@
                         <li class="active">Apple</li>
                     </ul>
 
-                    <!-- Seller Info -->
-                    <div class="col-md-2 col-md-push-10">
-                        <div class="wrap-box">
-                            <img src="img/items/2.png" alt="" class="img-responsive">
-                        </div>
-                    </div>
-                    <!-- /.Seller Info -->
-
-                    <!-- Gallery -->
-                    <div class="col-md-10 col-md-pull-2">
-
+                    <!-- Left Bar -->
+                    <div class="col-md-9">
+                        <!-- Gallery -->
                         <div class="panel panel-default carousel-item">
                             <div class="row wrap-box">
                                 <div class="col-md-6 col-xs-6">
@@ -133,14 +123,10 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- /.Gallery -->
 
-                    </div>
-                    <!-- /.Gallery -->
-
-                    <!-- Description, specs and review -->
-
-                    <div class="col-md-9 col-md-push-3">
-                        <div class="wrap-box">
+                        <!-- Description, specs and review -->
+                        <div class="row wrap-box">
                             <ul id="myTab" class="nav nav-tabs">
                                 <!-- Use uniqe name for "href" in below anchor tags -->
                                 <li class="active"><a href="#tab1" data-toggle="tab">Description</a></li>
@@ -253,9 +239,13 @@
 
                             </div>
                         </div>
+                        <!-- /.Description, specs and review -->
                     </div>
+                    
 
-                    <div class="col-md-3 col-md-pull-9">
+                    <!-- Right Bar -->
+                    <div class="col-md-3">
+                        <!-- Seller Info -->
                         <div class=" panel panel-info">
                             <div class="col-sm-12">
                                 <h3>Seller Details</h3>
@@ -285,11 +275,11 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- /.Seller Info -->
                         <leftBar:LeftBar ID="LeftBar" runat="server" />
                     </div>
+
                 </div>
-
-
             </div>
             <div class="sep-bor"></div>
         </div>

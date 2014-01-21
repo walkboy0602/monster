@@ -2,6 +2,12 @@
 Designed by : http://responsivewebinc.com
 ************************/
 
+/* Overwrite boostrap */
+label > span {
+    font-weight: initial;
+}
+
+
 /* Basic CSS starts */
 
 /*body {
@@ -85,7 +91,8 @@ strong {
 /* Basic CSS ends */
 
 .container {
-    width: 1050px;
+    /*width: 1050px;*/
+    width: 1170px;
 }
 
 .color {
@@ -2374,24 +2381,29 @@ footer {
     }
 
 
-.listing .category {
-    overflow: hidden;
-    margin: 10px auto;
-    padding: 10px 16px 10px 10px;
-    font-size: 18px;
-    line-height: 1.55;
-    color: #333333;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: #cccccc;
-    border-radius: 7px;
-    max-height: 135px;
-    text-align: center;
-}
+    .listing .category {
+        overflow: hidden;
+        cursor: pointer;
+        margin: 10px auto;
+        padding: 10px 16px 10px 10px;
+        font-size: 14px;
+        line-height: 1.55;
+        color: #333333;;
+        border: 1px solid;
+        border-color: #fff;
+        border-radius: 7px;
+        min-height: 64px;
+        max-height: 135px;
+        text-align: center;
+    }
 
-.listing .category:hover{
-    background-color: #ebebeb;
-    border-color: #adadad;
-}
+    .listing .category.active {
+        border: 1px solid;
+        border-radius: 7px;
+        background-color: #ebebeb;
+        border-color: #adadad;
+    }
 
-
+    .listing .category:hover {
+        color: #16cbe6;
+    }

@@ -5,7 +5,7 @@
 <%@ Import Namespace="System.Web.Http" %>
 <%@ Import Namespace="System.Web.Http.WebHost" %>
 
-<script runat="server">
+<script RunAt="server">
 
     public class SessionControllerHandler : HttpControllerHandler, IRequiresSessionState
     {
@@ -21,7 +21,7 @@
             return new SessionControllerHandler(requestContext.RouteData);
         }
     }
-    
+
     void Application_Start(object sender, EventArgs e)
     {
         // Code that runs on application startup
@@ -34,6 +34,10 @@
             routeTemplate: "api/{controller}/{action}/{id}",
             defaults: new { id = System.Web.Http.RouteParameter.Optional }
             ).RouteHandler = new SessionRouteHandler();
+
+
+        GlobalConfiguration.Configuration.Formatters.XmlFormatter.MediaTypeMappings.Add(new System.Net.Http.Formatting.QueryStringMapping("xml", "true", "application/xml"));
+        GlobalConfiguration.Configuration.Formatters.JsonFormatter.MediaTypeMappings.Add(new System.Net.Http.Formatting.QueryStringMapping("json", "true", "application/json"));
     }
 
 </script>

@@ -41,15 +41,15 @@ namespace Framework.DAL
             return AccountID;
         }
 
-        public User AutoLogin(int AccountID)
+        public User AutoLogin(int userID)
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("SELECT AccountID, FirstName, LastName FROM [User] WHERE AccountID = @accountID ");
+            sb.Append("SELECT id as UserID, FirstName, LastName, Email FROM [User] WHERE id = @userID ");
 
             SqlParameter[] param =
             {
-                new SqlParameter("@accountID", AccountID)
+                new SqlParameter("@userID", userID)
             };
 
             List<User> users = conn.executeSelectQuery<User>(sb.ToString(), param);
@@ -61,7 +61,7 @@ namespace Framework.DAL
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("SELECT u.AccountID, FirstName, LastName FROM Account ac ");
+            sb.Append("SELECT u.ID as UserID, FirstName, LastName, Email FROM Account ac ");
             sb.Append("INNER JOIN [User] u ON u.AccountID = ac.ID ");
             sb.Append("WHERE Username = @username AND pwdcompare(@password, Password) = 1 ");
 

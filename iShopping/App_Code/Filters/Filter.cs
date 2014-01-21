@@ -23,7 +23,15 @@ public class ValidateModelAttribute : ActionFilterAttribute
             {
                 if (state.Value.Errors.Count > 0)
                 {
-                    ErrorMessage.Append("<li>" + state.Value.Errors[0].ErrorMessage + "</li>");
+                    if (!string.IsNullOrEmpty(state.Value.Errors[0].ErrorMessage))
+                    {
+                        ErrorMessage.Append("<li>" + state.Value.Errors[0].ErrorMessage + "</li>");
+                    }
+                    else
+                    {
+                        //TODO:: Log error
+                        //ErrorMessage.Append("<li>" + state.Value.Errors[0].Exception + "</li>");
+                    }
                 }
             }
             ErrorMessage.Append("</ul>");

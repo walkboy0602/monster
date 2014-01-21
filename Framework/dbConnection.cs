@@ -159,6 +159,8 @@ namespace Framework
         {
             int id = 0;
 
+            _query += "SELECT SCOPE_IDENTITY()";
+
             if (string.IsNullOrEmpty(connectionString)) connectionString = connString;
             try
             {
@@ -184,6 +186,7 @@ namespace Framework
             return id;
         }
 
+
         /// <method>
         /// Update Query
         /// </method>
@@ -193,6 +196,14 @@ namespace Framework
 
             try
             {
+                foreach (SqlParameter parameter in sqlParameter)
+                {
+                    if (parameter.Value == null)
+                    {
+                        parameter.Value = DBNull.Value;
+                    }
+                }
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -200,13 +211,13 @@ namespace Framework
                     {
                         cmd.CommandTimeout = connTimeout;
                         if (sqlParameter != null) cmd.Parameters.AddRange(sqlParameter);
-                        cmd.ExecuteNonQuery();
+                        Convert.ToBoolean(cmd.ExecuteNonQuery());
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
 
             return true;

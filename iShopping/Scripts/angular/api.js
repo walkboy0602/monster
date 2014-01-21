@@ -2,8 +2,7 @@
 //http://weblogs.asp.net/dwahlin/archive/2013/08/16/using-an-angularjs-factory-to-interact-with-a-restful-service.aspx
 
 angular.module('shopAPI', [])
-    .factory('dataFactory', ['$http', function ($http) {
-
+    .factory('userFactory', ['$http', function ($http) {
         return {
             register: function (data) {
                 return $http.post('/api/user/register', data);
@@ -14,33 +13,28 @@ angular.module('shopAPI', [])
             logout: function (data) {
                 return $http.post('/api/user/logout', data);
             }
+        }
+    }])
+    .factory('referenceFactory', ['$http', function ($http) {
         
+        return {
+            list: function (data) {
+                return $http.get('/api/reference/list', { params: { ReferenceType: data, json: true } });
+            }
         }
 
-        //dataFactory.getCustomers = function () {
-        //    return $http.get(urlBase);
-        //};
+    }])
+    .factory('listingFactory', ['$http', function($http) {
+        
+        return {
+            create: function (data) {
+                return $http.post('/api/listing/create', data);
+            },
+            save: function (data) {
+                return $http.post('/api/listing/save', data);
+            }
 
-        //dataFactory.getCustomer = function (id) {
-        //    return $http.get(urlBase + '/' + id);
-        //};
-
-        //dataFactory.insertCustomer = function (cust) {
-        //    return $http.post(urlBase, cust);
-        //};
-
-        //dataFactory.updateCustomer = function (cust) {
-        //    return $http.put(urlBase + '/' + cust.ID, cust)
-        //};
-
-        //dataFactory.deleteCustomer = function (id) {
-        //    return $http.delete(urlBase + '/' + id);
-        //};
-
-        //dataFactory.getOrders = function (id) {
-        //    return $http.get(urlBase + '/' + id + '/orders');
-        //};
-
+        }
 
     }]);
 
