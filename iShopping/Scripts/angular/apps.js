@@ -7,7 +7,7 @@ var shopApp = angular.module("shopApp", ['shopAPI', 'ui.bootstrap', 'ngRoute', '
                         $locationProvider.html5Mode(true).hashPrefix('!');
 
                         $routeProvider.when('/listing/save/:id', {
-                            controller: ListingCreateCtrl, 
+                            controller: ListingCreateCtrl
                             //resolve: {
                             //    // I will cause a 1 second delay
                             //    delay: function ($q, $timeout) {
@@ -18,6 +18,9 @@ var shopApp = angular.module("shopApp", ['shopAPI', 'ui.bootstrap', 'ngRoute', '
                             //    }
                             //}
                         });
+                        //    .when('/listing/uploader/:id', {
+                        //    controller: ImageController      
+                        //});
 
                         //$routeProvider.when('/', {
                         //    templateUrl: 'partials/home.html',
@@ -40,6 +43,8 @@ shopApp.run(['$rootScope', '$window', '$http', '$location', '$route', '$routePar
         $rootScope.$route = $route;
         $rootScope.$routeParams = $routeParams;
 
+        $rootScope.id = $location.search().id;
+
         $rootScope.Enum = {
             ReferenceType: {
                 None: 0,
@@ -51,6 +56,7 @@ shopApp.run(['$rootScope', '$window', '$http', '$location', '$route', '$routePar
 
         $rootScope.$on('$routeChangeSuccess', function () {
             $rootScope.id = $rootScope.$routeParams.id;
+            $rootScope.$broadcast('ready');
         });
 
         $rootScope.errorMessage = "Sorry, there was an error while processing your request. <br/> Please contact our support";

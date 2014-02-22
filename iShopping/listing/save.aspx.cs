@@ -24,6 +24,7 @@ public partial class listing_save : BaseController
             Response.Redirect("/user/login");
         }
 
+
         int UserID = (int)Session["UserID"];
 
         //Invalid Listing ID

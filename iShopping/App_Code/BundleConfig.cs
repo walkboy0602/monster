@@ -12,7 +12,7 @@ namespace iShopping
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
         {
-        
+
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
                 "~/Scripts/global.js",
                 "~/Scripts/plugin/holder.js"
@@ -42,18 +42,30 @@ namespace iShopping
                  "~/Scripts/angular/angular-bootstrap-select.js",
                  "~/Scripts/angular/apps.js",
                  "~/Scripts/angular/api.js",
+                 "~/Scripts/angular/service.js",
                  "~/Scripts/angular/directive.js",
                  "~/Scripts/angular/ui-bootstrap-tpls-0.6.0.js",
                  "~/Scripts/angular/user.js",
                  "~/Scripts/angular/listing.js"
                  ));
 
-            //CK-Editor
-            bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
+            //Listing e.g- ck editor, file uploader
+            bundles.Add(new ScriptBundle("~/bundles/listing").Include(
                 "~/Scripts/js/ckeditor/ckeditor.js"
                 ));
 
-
+            //File uploader
+            bundles.Add(new ScriptBundle("~/bundles/upload").Include(
+                "~/Scripts/js/fileupload/vendor/jquery.ui.widget.js",
+                "~/Scripts/js/fileupload/load-image.min.js",
+                "~/Scripts/js/fileupload/jquery.iframe-transport.js",
+                "~/Scripts/js/fileupload/jquery.fileupload.js",
+                "~/Scripts/js/fileupload/jquery.fileupload-process.js",
+                "~/Scripts/js/fileupload/jquery.fileupload-image.js",
+                "~/Scripts/js/fileupload/jquery.fileupload-validate.js",
+                "~/Scripts/js/fileupload/jquery.fileupload-angular.js",
+                "~/Scripts/js/fileupload/app.js"
+                ));
         }
     }
 }

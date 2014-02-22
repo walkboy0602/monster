@@ -7,6 +7,9 @@ label > span {
     font-weight: initial;
 }
 
+.well-white {
+    background-color: #fff;
+}
 
 /* Basic CSS starts */
 
@@ -2378,6 +2381,7 @@ footer {
         border: 1px solid #f2f2f2;
         border-radius: 7px;
         box-shadow: 0 0 10px 1px rgba(190,189,189,.74);
+        margin-bottom: 10px;
     }
 
 
@@ -2388,7 +2392,8 @@ footer {
         padding: 10px 16px 10px 10px;
         font-size: 14px;
         line-height: 1.55;
-        color: #333333;;
+        color: #333333;
+        ;
         border: 1px solid;
         border-color: #fff;
         border-radius: 7px;
@@ -2397,13 +2402,64 @@ footer {
         text-align: center;
     }
 
-    .listing .category.active {
-        border: 1px solid;
-        border-radius: 7px;
-        background-color: #ebebeb;
-        border-color: #adadad;
+        .listing .category.active {
+            border: 1px solid;
+            border-radius: 7px;
+            background-color: #ebebeb;
+            border-color: #adadad;
+        }
+
+        .listing .category:hover {
+            color: #16cbe6;
+        }
+
+.upload-box {
+    height: 250px;
+    overflow: hidden;
+}
+
+.img-container {
+    height: 188px;
+}
+
+    .img-container img {
+        margin: 0 0 7px 7px;
     }
 
-    .listing .category:hover {
-        color: #16cbe6;
+    .img-container .cover {
+        float: left;
+        margin-right: 13px;
+        margin-left: 2px;
+        margin-bottom: 0px;
+        width: 173px;
+        height: 169px;
+        text-transform: uppercase;
+    }
+
+    .img-container .label-tips {
+        position: absolute;
+        top: 80px;
+        left: 235px;
+        text-align: center;
+    }
+
+    .img-container .label-addnew {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .img-container .sub-thumbnail{
+        display: inline-block;
+    }
+
+    .img-container .sub-image {
+        width: 80px;
+        height: 62px;
+        padding: 3px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .img-container .button {
+        margin-top: 100px;
     }

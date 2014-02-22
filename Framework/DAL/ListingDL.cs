@@ -57,16 +57,35 @@ namespace Framework.DAL
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("SELECT 1 FROM Listing (NOLOCK) WHERE id = @listingID AND CreateBy = @userID AND Status = @status ");
+            sb.Append("SELECT 1 FROM Listing (NOLOCK) WHERE id = @listingID AND CreateBy = @userID AND Status != @status ");
 
             SqlParameter[] param = 
             {
                 new SqlParameter("@listingID", listingID),
                 new SqlParameter("@userID", userID),
-                new SqlParameter("@status", (char)ListingStatus.New)
+                new SqlParameter("@status", (char)ListingStatus.Suspended)
             };
 
             return Convert.ToBoolean(conn.executeQueryInt(sb.ToString(), param));
+        }
+
+        public Listing Get(Listing objListing)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("SELECT id, SaleType, CategoryType, Title, Description, Price, WarrentyDesc, CreateBy as UserID, CreateDate, CashOnDelivery as COD, OnlinePayment as OnPay, PaymentDescription ");
+            sb.Append("FROM Listing (NOLOCK) ");
+            sb.Append("WHERE id = @id AND CreateBy = @userID ");
+
+            SqlParameter[] param = {
+                                       new SqlParameter("@id", objListing.id),
+                                       new SqlParameter("@userID", objListing.UserID)
+                                   };
+
+            List<Listing> obj = conn.executeSelectQuery<Listing>(sb.ToString(), param);
+
+            return obj.Count > 0 ? obj[0] : null;
+
         }
 
         public bool Save(Listing objListing)
@@ -99,6 +118,8 @@ namespace Framework.DAL
 
             return result;
         }
+
+
 
     }
 }

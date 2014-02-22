@@ -40,5 +40,10 @@ namespace Framework.Model
 
         public int UserID { get; set; }
 
+        public DateTime CreateDate { get; set; }
+
+        public List<Image> Image { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }

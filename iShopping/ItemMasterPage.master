@@ -82,13 +82,13 @@
                     <div class="kart-links">
                         <a runat="server" href="~/user/login">Login</a>
                         <a runat="server" href="~/user/signup">Signup</a>
-                        <a data-toggle="modal" href="#shoppingcart"><span class="fa fa-shopping-cart"></span> 3 Items - $300</a>
+                        <a data-toggle="modal" href="#shoppingcart"><span class="fa fa-shopping-cart"></span>3 Items - $300</a>
                     </div>
                     <% }
                        else
                        { %>
                     <div class="kart-links pull-right">
-                        <a runat="server" href="~/user/home"><span class="fa fa-user"></span> <%= Session["Lastname"] %></a>
+                        <a runat="server" href="~/user/home"><span class="fa fa-user"></span><%= Session["Lastname"] %></a>
                         <a href="javascript:void(0);" data-ng-click="logout();"><span class="fa fa-power-off"></span>Logout</a>
                     </div>
                     <% } %>
@@ -160,18 +160,12 @@
     </div>
     <!-- /.modal -->
 
-    
-    <script>
-        window.data = {
-            country: '@ViewBag.UserBasedCountry',
-            subID: '@ViewBag.subID',
-            acl: '@ViewBag.AccessLevel'
-        };
-    </script>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/script") %>
         <%: Scripts.Render("~/bundles/angular") %>
     </asp:PlaceHolder>
-
+    <!-- Additional Script -->
+    <asp:ContentPlaceHolder ID="addScript" runat="server"></asp:ContentPlaceHolder>
+    <!-- /.Additional Script -->
 </body>
 </html>

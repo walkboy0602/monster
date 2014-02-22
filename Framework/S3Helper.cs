@@ -17,7 +17,6 @@ using System.Net;
 using System.Web.Helpers;
 using ImageResizer;
 
-
 public class S3Helper
 {
     private AmazonS3 client;
@@ -71,7 +70,9 @@ public class S3Helper
 
         var newString = randomString.ToString();
         var epoch = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
-        var result = id + "_" + newString + "_" + epoch + "." + fileExt;
+        //var result = id + "_" + newString + "_" + epoch + "." + fileExt;
+        //DateTime.Now.ToString("yyyymmdd")
+        var result = newString + "-" + fileName + "." + fileExt;
 
         return result;
     }
@@ -102,7 +103,7 @@ public class S3Helper
         string[] filenames = destinationS3path.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         string filename = filenames[filenames.Length - 1];
 
-        byte[] thumbnail = CreateThumbnail(croppedWebImage.GetBytes(webImage.ImageFormat), filename, width, height);
+        byte[] thumbnail = CreateImage(croppedWebImage.GetBytes(webImage.ImageFormat), filename, width, height);
         bool result = UploadToS3(thumbnail, destinationS3path);
         //List<string> photo = new List<string>();
         //photo.Add(destinationS3path);
@@ -283,7 +284,7 @@ public class S3Helper
 
     // Create a thumbnail in byte array format from the image encoded in the passed byte array.  
     // (RESIZE an image in a byte[] variable.)  
-    public byte[] CreateThumbnail(byte[] PassedImage, string filename, int Width = 640, int Height = 400, int quality = 85)
+    public byte[] CreateImage(byte[] PassedImage, string filename, int Width = 640, int Height = 400, int quality = 85)
     {
         byte[] ReturnedThumbnail;
 

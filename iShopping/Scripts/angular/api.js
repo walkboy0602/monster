@@ -24,7 +24,7 @@ angular.module('shopAPI', [])
         }
 
     }])
-    .factory('listingFactory', ['$http', function($http) {
+    .factory('listingFactory', ['$http', function ($http) {
         
         return {
             create: function (data) {
@@ -32,8 +32,22 @@ angular.module('shopAPI', [])
             },
             save: function (data) {
                 return $http.post('/api/listing/save', data);
+            },
+            get: function (id) {
+                return $http.get('/api/listing/get', { params: { id: id } });
             }
 
+        }
+
+
+    }])
+    .factory('imageFactory', ['$http', function ($http) {
+
+        return {
+            delete: function (data) {
+                //console.log(JSON.stringify(data));
+                return $http.post('/api/image/delete', data);
+            },
         }
 
     }]);

@@ -1,4 +1,36 @@
-﻿shopApp.directive('chosen', [function () {
+﻿
+shopApp.directive('fileupload', ['uploadManager', function factory(uploadManager) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+
+            $(element).fileupload({
+                dataType: 'text',
+                sequentialUploads: true,
+                //add: function (e, data) {
+                //    uploadManager.add(data);
+                //},
+                submit: function (e, data) {
+                    if (undefined === scope.uploadForm) {
+                        data.formData = scope.form;
+                    } else {
+                        data.formData = scope.uploadForm;
+                    }
+                    console.log(data.formData);
+                },
+                progressall: function (e, data) {
+                    uploadManager.setProgress(data);
+                },
+                done: function (e, data) {
+                    uploadManager.done(data);
+                }
+            });
+
+        }
+    };
+}]);
+
+shopApp.directive('chosen', [function () {
     return {
         restrict: 'A',
         link: function (scope, element, attrs, controller) {

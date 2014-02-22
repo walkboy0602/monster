@@ -13,7 +13,7 @@
             <div class="tab-content col-md-12">
 
                 <!-- Sale Type -->
-                <div id="sale" class="listing tab-pane active fade in" data-ng-show="saleTypes != null">
+                <div id="sale" class="listing tab-pane  fade in" data-ng-show="saleTypes != null">
                     <div class="row wrap-box">
                         <h3>What do you want to sale?</h3>
 
@@ -35,7 +35,15 @@
 
 
                 <!-- Details -->
-                <div id="detail" class="listing tab-pane fade in" data-ng-controller="ListingDetailCtrl">
+                <div id="detail" class="listing tab-pane fade in active" data-ng-controller="ListingDetailCtrl">
+
+                    <div class="row wrap-box">
+                        <h3>My Item Photos</h3>
+                        <div class="col-md-8 col-md-push-2">
+                            <iframe id="imageuploader" width="100%" height="250px" frameborder="0" scrolling="no" ></iframe>
+                        </div>
+                    </div>
+
                     <div class="row wrap-box">
                         <h3>{{selected_type}} - Details</h3>
                         <form id="form" class="form-horizontal form">
@@ -304,7 +312,9 @@
         </div>
     </div>
 
-
-    <%: Scripts.Render("~/bundles/ckeditor") %>
 </asp:Content>
 
+
+<asp:Content ID="addScript" ContentPlaceHolderID="addScript" runat="Server">
+    <%: Scripts.Render("~/bundles/listing") %>
+</asp:Content>

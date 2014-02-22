@@ -29,6 +29,11 @@ namespace Framework.BLL
             return ListingID;
         }
 
+        public Listing Get(Listing objListing)
+        {
+            return _ListingDL.Get(objListing);
+        }
+
         public bool Save(Listing objListing)
         {
             return _ListingDL.Save(objListing);

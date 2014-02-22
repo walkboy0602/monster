@@ -45,7 +45,7 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	config.path = "/scripts/js/ckeditor/";	
 	
-	config.filebrowserUploadUrl = "/api/listing/uploadimage?type=Images";
+	//config.filebrowserUploadUrl = "/api/listing/uploadimage?type=Images";
 	
 	config.filebrowserUploadUrl = "/webservice/upload.ashx";
 

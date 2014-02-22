@@ -71,15 +71,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DBReference.cs" />
+    <Compile Include="BLL\ImageBL.cs" />
     <Compile Include="BLL\ListingBL.cs" />
     <Compile Include="BLL\ReferenceBL.cs" />
     <Compile Include="BLL\UserBL.cs" />
     <Compile Include="CustomControl.cs" />
+    <Compile Include="DAL\ImageDL.cs" />
     <Compile Include="DAL\ListingDL.cs" />
     <Compile Include="DAL\ReferenceDL.cs" />
     <Compile Include="DAL\UserDL.cs" />
     <Compile Include="dbConnection.cs" />
     <Compile Include="Model\objEnum.cs" />
+    <Compile Include="Model\objImage.cs" />
     <Compile Include="Model\objListing.cs" />
     <Compile Include="Model\objReference.cs" />
     <Compile Include="Model\objUser.cs" />
@@ -90,6 +93,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="S3Helper.cs" />
+    <Compile Include="StringExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\EntityFramework.dll" />
