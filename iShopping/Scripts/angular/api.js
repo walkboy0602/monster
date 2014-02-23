@@ -2,6 +2,15 @@
 //http://weblogs.asp.net/dwahlin/archive/2013/08/16/using-an-angularjs-factory-to-interact-with-a-restful-service.aspx
 
 angular.module('shopAPI', [])
+    .factory('ListingFact', ['$resource', function ($resource) {
+        var api = "/api/listing";
+
+        return $resource(api, {}, {
+            get: { url: api + "/get", method: "GET", params: { id: '@id' } },
+            save: { url: api + "/save", method: "POST" }
+        });
+
+    }])
     .factory('userFactory', ['$http', function ($http) {
         return {
             register: function (data) {
@@ -16,7 +25,7 @@ angular.module('shopAPI', [])
         }
     }])
     .factory('referenceFactory', ['$http', function ($http) {
-        
+
         return {
             list: function (data) {
                 return $http.get('/api/reference/list', { params: { ReferenceType: data, json: true } });
@@ -25,7 +34,7 @@ angular.module('shopAPI', [])
 
     }])
     .factory('listingFactory', ['$http', function ($http) {
-        
+
         return {
             create: function (data) {
                 return $http.post('/api/listing/create', data);

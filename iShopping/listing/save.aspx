@@ -13,14 +13,14 @@
             <div class="tab-content col-md-12">
 
                 <!-- Sale Type -->
-                <div id="sale" class="listing tab-pane  fade in" data-ng-show="saleTypes != null">
+                <div id="sale" class="listing tab-pane  fade in active" data-ng-show="saleTypes != null">
                     <div class="row wrap-box">
                         <h3>What do you want to sale?</h3>
 
                         <div data-ng-repeat="t in saleTypes">
                             <div class="col-md-3" data-ng-click='setCategory(t.KeyString, t.ValueString)'>
                                 <a href="#detail">
-                                    <div class="category" data-ng-class="getClass(t.KeyString)">
+                                    <div class="category" data-ng-class="getClass(t.KeyString)" data-ng-model="form.SaleType">
                                         <i data-ng-if="t.CssClass !== null" data-ng-class="t.CssClass"></i>
                                         <i data-ng-if="t.CssClass === null" class="fa fa-5x fa-truck"></i>
                                         <div class="category-detail">
@@ -35,7 +35,7 @@
 
 
                 <!-- Details -->
-                <div id="detail" class="listing tab-pane fade in active" data-ng-controller="ListingDetailCtrl">
+                <div id="detail" class="listing tab-pane fade in " data-ng-controller="ListingDetailCtrl">
 
                     <div class="row wrap-box">
                         <h3>My Item Photos</h3>
@@ -93,7 +93,7 @@
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <span class="input-group-addon">RM</span>
-                                            <input type="text" class="form-control validate[required]" placeholder="Price" data-ng-model="form.Price" id="price" name="price" maxlength="8" onkeypress="return isNumberKey(event)" />
+                                            <input type="text" class="form-control validate[required]" placeholder="Price" data-ng-model="form.Price" id="price" name="price" maxlength="8" onkeypress="return isDecimal(event)" />
                                         </div>
                                     </div>
                                 </div>

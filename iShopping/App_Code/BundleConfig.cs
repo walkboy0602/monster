@@ -37,6 +37,7 @@ namespace iShopping
             //Angular
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                  "~/Scripts/angular/1.2.9/angular.js",
+                 "~/Scripts/angular/1.2.9/angular-resource.js",
                  "~/Scripts/angular/1.2.9/angular-route.js",
                  "~/Scripts/angular/1.2.9/angular-sanitize.js",
                  "~/Scripts/angular/angular-bootstrap-select.js",

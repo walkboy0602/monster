@@ -1,7 +1,7 @@
-﻿//Login User
+﻿
+function ListingCreateCtrl($scope, listingFactory, referenceFactory, $filter, $q, ListingManager, ListingFact) {
 
-function ListingCreateCtrl($scope, listingFactory, referenceFactory, $filter, $q, ListingManager) {
-    $scope.form = {};
+    $scope.form = null;
     $scope.files = [];
     $scope.cover = null;
 
@@ -27,6 +27,7 @@ function ListingCreateCtrl($scope, listingFactory, referenceFactory, $filter, $q
     }
 
     $scope.getClass = function (id) {
+
         if (id === $scope.form.SaleType) {
             return "category active";
         } else {
@@ -38,42 +39,52 @@ function ListingCreateCtrl($scope, listingFactory, referenceFactory, $filter, $q
 
         $('#imageuploader').attr('src', '/listing/uploader?id=' + $scope.id);
 
-        $q.all([ListingManager.formDefer(), ListingManager.referenceDefer()]).then(function (results) {
-            var form = results[0];
-            reference = results[1];
-            $scope.saleTypes = $filter('filter')(reference, { Type: $scope.Enum.ReferenceType.SaleType.toString() }, true);
-            $scope.tags = $filter('filter')(reference, { Type: $scope.Enum.ReferenceType.Tag.toString() }, true);
+        if ($scope.form === null) {
 
-            $scope.form.id = form.id;
-            $scope.form.CreateDate = $filter('date')(form.CreateDate, 'dd/MM/yyyy');
-            $scope.form.Title = form.Title;
-            $scope.form.Description = form.Description;
-            $scope.form.Price = form.Price;
-            $scope.form.isWarrently = form.WarrentyDesc === null ? false : true;
-            $scope.form.WarrentyDesc = form.WarrentyDesc;
-            $scope.form.COD = form.COD;
-            $scope.form.OnPay = form.OnPay;
-            $scope.form.PaymentDescription = form.PaymentDescription;
+            $q.all([ListingSvc.get({ id: $scope.id }), ListingManager.referenceDefer()]).then(function (results) {
+                var form = results[0];
+                reference = results[1];
 
-        });
+                $scope.saleTypes = $filter('filter')(reference, { Type: $scope.Enum.ReferenceType.SaleType.toString() }, true);
+                $scope.tags = $filter('filter')(reference, { Type: $scope.Enum.ReferenceType.Tag.toString() }, true);
+
+                $scope.form = form;
+                $scope.form.SaleType = form.SaleType.toString();
+                $scope.form.CategoryType = form.CategoryType.toString();
+                $scope.form.isWarrently = form.WarrentyDesc === null ? false : true;
+
+                console.log($scope.form);
+
+                //$scope.form.id = form.id;
+                //$scope.form.CreateDate = $filter('date')(form.CreateDate, 'dd/MM/yyyy');
+                //$scope.form.Title = form.Title;
+                //$scope.form.Description = form.Description;
+                //$scope.form.Price = form.Price;
+                //$scope.form.WarrentyDesc = form.WarrentyDesc;
+                //$scope.form.COD = form.COD;
+                //$scope.form.OnPay = form.OnPay;
+                //$scope.form.PaymentDescription = form.PaymentDescription;
+
+            });
+
+        }
 
     });
 
     $scope.save = function () {
-        listingFactory.save($scope.form)
-            .success(function (data, status) {
-                $('a[href="#successtab"]').tab('show');
-            })
-            .error(function (data, status) {
-                if (status === 400) {
-                    $scope.warning(data.Message);
-                } else {
-                    $scope.error();
-                }
-            });
-    }
+        ListingSvc.save($scope.form, function () {
+            $('a[href="#successtab"]').tab('show');
+        }, function (response) {
+            if (response.status === 400) {
+                $scope.warning(response.data.Message);
+            } else {
+                $scope.error();
+            }
+        });
 
+    }
 }
+
 
 function ImageController($scope, $q, ListingManager, imageFactory, $filter) {
     $scope.files = [];
@@ -84,33 +95,33 @@ function ImageController($scope, $q, ListingManager, imageFactory, $filter) {
 
     $scope.mode = 'add';
 
-    $q.all([ListingManager.formDefer()]).then(function (results) {
+    //$q.all([ListingManager.formDefer()]).then(function (results) {
 
-        var form = results[0];
-        $scope.form.id = form.id;
-        $scope.form.CreateDate = $filter('date')(form.CreateDate, 'dd/MM/yyyy');
+    //    var form = results[0];
+    //    $scope.form.id = form.id;
+    //    $scope.form.CreateDate = $filter('date')(form.CreateDate, 'dd/MM/yyyy');
 
-        var file;
-        angular.forEach(form.Image, function (v, k) {
-            file = {
-                id: v.id,
-                Src: v.Src.replace("####size####", "s1"),
-                IsCover: v.IsCover
-            }
+    //    var file;
+    //    angular.forEach(form.Image, function (v, k) {
+    //        file = {
+    //            id: v.id,
+    //            Src: v.Src.replace("####size####", "s1"),
+    //            IsCover: v.IsCover
+    //        }
 
-            if (file.is_cover) {
-                $scope.cover = file;
-            }
+    //        if (file.is_cover) {
+    //            $scope.cover = file;
+    //        }
 
-            $scope.files.push(file);
+    //        $scope.files.push(file);
 
-        });
+    //    });
 
-        if ($scope.cover === null) {
-            $scope.cover = $scope.files[0];
-        }
+    //    if ($scope.cover === null) {
+    //        $scope.cover = $scope.files[0];
+    //    }
 
-    });
+    //});
 
     //Do something when image is successfully upload
     $scope.$on('uploadCallback', function (e, call) {
@@ -155,7 +166,7 @@ function ImageController($scope, $q, ListingManager, imageFactory, $filter) {
         });
         imageFactory.delete($scope.file_deleted)
             .success(function (data, status) {
-                for(var i= 0; i < $scope.files.length; i++){
+                for (var i = 0; i < $scope.files.length; i++) {
                     if ($scope.files[i].checked) {
                         $scope.files.splice(i, 1);
                         i--;
@@ -184,7 +195,7 @@ shopApp.controller("ListingDetailCtrl", ['$scope', 'userFactory', '$route', 'ref
     function ($scope, userFactory, $route, referenceFactory, $filter) {
 
         //default option
-        $scope.form.isWarrently = '0';
+        //$scope.form.isWarrently = '0';
 
         //init validation
         var isValid = false;

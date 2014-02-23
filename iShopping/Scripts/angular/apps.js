@@ -1,6 +1,6 @@
 ﻿
 //declare a module
-var shopApp = angular.module("shopApp", ['shopAPI', 'ui.bootstrap', 'ngRoute', 'ngSanitize'])
+var shopApp = angular.module("shopApp", ['shopAPI', 'ui.bootstrap', 'ngRoute', 'ngSanitize', 'ngResource'])
                     .config(function ($locationProvider, $routeProvider) {
 
                         //Remove Anchor (#) tag on URL

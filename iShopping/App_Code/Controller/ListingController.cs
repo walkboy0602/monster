@@ -32,7 +32,6 @@ public class ListingController : ApiController
     {
         Listing objListing = new Listing();
         
-
         if (BaseController.AuthCheck())
         {
             objListing.id = id;

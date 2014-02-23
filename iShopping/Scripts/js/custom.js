@@ -5,6 +5,14 @@ function isNumberKey(evt) {
     return true;
 }
 
+function isDecimal(e) {
+    if (e.charCode == 46 || e.charCode == 44) {
+        var currentContents = $input.val();
+        return !(currentContents.indexOf(',') !== -1 || currentContents.indexOf('.') !== -1);
+    }
+    return (e.charCode >= 48 && e.charCode <= 57) || e.charCode === 0;
+}
+
 /* Bootstrap Carousel */
 
 $('.carousel').carousel({
